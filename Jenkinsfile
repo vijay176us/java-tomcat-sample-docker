@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy Tomcat on Dev Environment'){
             steps {
-                sh "docker run -d --rm -p 8081:8080 tomcatsamplewebapp:12"
+                sh "docker run -d --rm -p 8081:8080 tomcatsamplewebapp:${env.BUILD_ID}"
             }
         }
     }
